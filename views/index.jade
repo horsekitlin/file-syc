@@ -1,4 +1,13 @@
-form(method="post" , name="upload" , action="/file_upload"  , enctype="multipart/form-data")
-    p 檔案上傳：
-    input(name="file" , type="file")
-    input(value="送出" , type="submit")
+extends layout
+
+block file-update
+    .row-fluid
+        .span8
+            form#fileupload(method="post",action="/file_upload"  , enctype="multipart/form-data")
+                p locale.fileupload.start：
+                input#files(type="file", name="files")
+                input(class="btn btn-primary", type="submit", value="送出")
+        
+
+
+
